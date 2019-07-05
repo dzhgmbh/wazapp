@@ -117,13 +117,6 @@ function createWindow() {
 		}
 	}))
 
-	wscc.webContents.on('dom-ready', function (e) {
-		let js_content = fs.readFileSync(path.join(__dirname, 'assets/init.js'), 'utf8')
-		let css_content = fs.readFileSync(path.join(__dirname, 'assets/styles.css'), 'utf8')
-		js_content = js_content.replace('{MY_CUSTOM_STYLE}', '`' + css_content + '`')
-		wscc.webContents.executeJavaScript(js_content);
-	})
-
 	// Open the DevTools.
 	// window.webContents.openDevTools()
 

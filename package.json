@@ -2,6 +2,7 @@
 	"name": "WhatsApp",
 	"version": "3.0.0",
 	"description": "Whatsapp Custom Client for Linux",
+	"desktopName": "whatsapp.desktop",
 	"main": "index.js",
 	"scripts": {
 		"start": "electron .",

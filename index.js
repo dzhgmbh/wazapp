@@ -42,7 +42,7 @@ app.on('ready', () => {
 			click: () => { app.quit(); }
 		}
 	])
-	tray.setToolTip('WazApp.')
+	tray.setToolTip('WhatsApp')
 	tray.setContextMenu(contextMenu)
 	tray.on("double-click", function(event){
 		wscc.show();

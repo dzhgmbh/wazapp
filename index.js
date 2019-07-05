@@ -92,7 +92,7 @@ function createWindow() {
 		width: 500,
 		height: 600,
 		backgroundColor: '#2c2c2c',
-		title: "WhatSapp",
+		title: "WhatsApp",
 		autoHideMenuBar: true,
 		icon: path.join(__dirname, 'assets/icons/icon.png'),
 		show: true

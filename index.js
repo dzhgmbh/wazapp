@@ -109,12 +109,14 @@ function createWindow() {
 	//notifications
 	wscc.on('page-title-updated', osLinux((event, title) => {
 		var msgCount = title.match(/\((\d+)\)/);
-		msgCount = msgCount ? msgCount[1] : '';
-		if (parseInt(msgCount) > 0) {
-			tray.setImage(path.join(__dirname, 'assets/icons/iconmsg.png'));
-		} else {
-			tray.setImage(path.join(__dirname, 'assets/icons/icon.png'));
-		}
+                msgCount = msgCount ? parseInt(msgCount[1]) : 0;
+                app.setBadgeCount(msgCount);
+
+                if (msgCount > 0) {
+                        tray.setImage(path.join(__dirname, 'assets/icons/iconmsg.png'));
+                } else {
+                        tray.setImage(path.join(__dirname, 'assets/icons/icon.png'));
+                }
 	}))
 
 	// Open the DevTools.

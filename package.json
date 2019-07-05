@@ -1,5 +1,5 @@
 {
-	"name": "ws-custom-client",
+	"name": "WhatsApp",
 	"version": "3.0.0",
 	"description": "Whatsapp Custom Client for Linux",
 	"main": "index.js",

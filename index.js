@@ -103,6 +103,23 @@ function createWindow() {
 
 	//set user agent of browser #avoid whatsapp error on chromium browser
 	wscc.webContents.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36")
+	//fix user agent
+	wscc.webContents.on('dom-ready', function(e) {
+        let script = `
+            window.onunload = () => {
+                
+                navigator.serviceWorker.getRegistrations().then(
+                    function(registrations) {
+                        for(let registration of registrations) {
+                            registration.unregister();
+                        }
+                    }
+                )
+
+            }
+            `
+        wscc.webContents.executeJavaScript(script)
+    });
 	wscc.loadURL("https://web.whatsapp.com");
 
 
